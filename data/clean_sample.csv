@@ -1,0 +1,16 @@
+customer_id,email,purchase_date,amount,category
+1,john@email.com,2024-01-15,100.50,Electronics
+2,jane@email.com,2024-01-16,85.00,Books
+3,bob@email.com,2024-01-17,120.75,Electronics
+4,alice@email.com,2024-01-18,95.25,Clothing
+5,charlie@email.com,2024-01-19,150.00,Books
+6,diana@email.com,2024-01-20,175.25,Electronics
+7,eve@email.com,2024-01-21,75.50,Clothing
+8,frank@email.com,2024-01-22,200.00,Electronics
+9,grace@email.com,2024-01-23,90.00,Books
+10,henry@email.com,2024-01-24,110.25,Electronics
+11,iris@email.com,2024-01-25,85.75,Clothing
+12,jack@email.com,2024-01-26,300.00,Electronics
+13,kate@email.com,2024-01-27,95.50,Books
+14,leo@email.com,2024-01-28,125.00,Electronics
+15,mia@email.com,2024-01-29,135.75,Clothing
