@@ -22,17 +22,6 @@ A comprehensive tool for automatically detecting common data quality issues in C
 - **Real-time Analysis**: Instant feedback on data quality issues
 - **Mobile Responsive**: Works on desktop and mobile devices
 
-## Screenshots
-
-### Dashboard Overview
-![Dashboard](https://via.placeholder.com/800x400/4CAF50/FFFFFF?text=Data+Quality+Dashboard)
-
-### Missing Values Analysis
-![Missing Values](https://via.placeholder.com/800x400/FF9800/FFFFFF?text=Missing+Values+Analysis)
-
-### Schema Issues Detection
-![Schema Issues](https://via.placeholder.com/800x400/F44336/FFFFFF?text=Schema+Issues+Detection)
-
 ## Installation
 
 ### Prerequisites
