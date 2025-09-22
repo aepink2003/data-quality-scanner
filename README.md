@@ -137,5 +137,3 @@ python -m pytest tests/ -v
 - **Dashboard validation**: Verify data quality for BI dashboards
 - **Compliance reporting**: Generate data quality documentation
 - **Audit preparation**: Prepare data quality evidence for audits
-
-*Help improve data quality, one CSV at a time!*
