@@ -145,19 +145,19 @@ python -m pytest tests/ -v
 
 ⸻
 
-## Use Cases
+## Use:
 
-Data Engineering
+# Data Engineering
 	•	Validate data before ETL or pipeline ingestion
 	•	Perform routine data quality audits
 	•	Prioritize remediation efforts
 
-Data Analysis
+# Data Analysis
 	•	Assess data readiness before analysis
 	•	Validate datasets used in reporting
 	•	Communicate data quality issues to stakeholders
 
-Data Science
+# Data Science
 	•	Identify problematic features prior to modeling
 	•	Ensure training data integrity
 	•	Reduce downstream model risk
