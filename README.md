@@ -1,139 +1,135 @@
-# Data Quality Scanner
+# Data Quality Scanner  
+### Interactive Data Validation & Profiling Tool
 
-A comprehensive tool for automatically detecting common data quality issues in CSV files. Built with Python and Streamlit, this application provides an interactive dashboard to analyze data quality and generate detailed reports.
+## TL;DR
+Built an interactive data quality scanning tool that automatically detects common issues in CSV files, including missing values, duplicates, schema inconsistencies, and invalid formats.  
+Provides a data quality score, issue prioritization by severity, and downloadable reports via a Streamlit dashboard.
 
-## Features
+🔗 **Live App:** https://data-quality-scanner.streamlit.app/#how-to-get-started
+
+---
+
+## Overview
+The Data Quality Scanner is an interactive tool designed to automatically detect and summarize common data quality issues in CSV datasets. It helps data practitioners quickly assess data readiness before analysis, modeling, or pipeline ingestion.
+
+The application transforms raw datasets into actionable diagnostics through automated checks, visual summaries, and exportable reports.
+
+---
+
+## Problem Statement
+Poor data quality is a leading cause of unreliable analytics, failed machine learning models, and broken data pipelines. Manual data validation is time-consuming, error-prone, and difficult to scale.
+
+### Objective
+Provide an automated, easy-to-use tool that identifies data quality issues, prioritizes them by severity, and summarizes overall data health in a format accessible to both technical and non-technical users.
+
+---
+
+## Key Features
 
 ### Core Data Quality Checks
-- **Missing Values Detection**: Identify and quantify missing or null values across columns
-- **Duplicate Row Detection**: Find and analyze duplicate entries in your dataset
-- **Schema Validation**: Detect inconsistent data types and format mismatches
-- **Data Type Analysis**: Comprehensive analysis of data types and distributions
+- Detection and quantification of missing values
+- Identification of duplicate rows
+- Schema validation and inconsistent data types
+- Column-level data type and distribution analysis
 
-### Advanced Analytics
-- **Interactive Dashboard**: Real-time visualization of data quality metrics
-- **Quality Score**: Overall data quality score (0-100) with detailed breakdown
-- **Issue Prioritization**: Categorize issues by severity (High/Medium/Low)
-- **Export Options**: Download reports in multiple formats (TXT, CSV)
+### Analytics & Reporting
+- Interactive dashboard with real-time metrics
+- Overall data quality score (0–100) with breakdowns
+- Issue prioritization by severity (High / Medium / Low)
+- Exportable reports (TXT, CSV)
 
 ### User Experience
-- **Drag & Drop Upload**: Easy CSV file upload via web interface
-- **Sample Data**: Built-in sample datasets to explore functionality
-- **Real-time Analysis**: Instant feedback on data quality issues
-- **Mobile Responsive**: Works on desktop and mobile devices
+- Drag-and-drop CSV upload
+- Built-in sample datasets for exploration
+- Instant feedback on uploaded data
+- Responsive UI for desktop and mobile use
 
-## Installation
+---
 
-### Prerequisites
-- Python 3.8 or higher
-- pip package manager
+## Approach
 
-## Usage
+### Data Ingestion
+- CSV file upload via Streamlit interface
+- Validation of file structure and size limits
 
-Link to tool: https://data-quality-scanner.streamlit.app/#how-to-get-started
+### Automated Quality Checks
+- Missing value analysis across all columns
+- Duplicate row detection
+- Schema and data type consistency checks
+- Pattern-based validation (e.g., dates, emails)
 
-### Basic Usage
+### Scoring & Prioritization
+- Computation of an overall data quality score
+- Classification of issues by severity thresholds
+- Column-level and dataset-level summaries
 
-1. **Upload a CSV file** using the sidebar uploader
-2. **Wait for analysis** - the tool automatically scans your data
-3. **Review the dashboard** with interactive charts and metrics
-4. **Download reports** for further analysis or sharing
+### Visualization & Reporting
+- Interactive charts and tables for issue exploration
+- Downloadable quality reports for sharing or documentation
 
-### Sample Data
+---
 
-Click "Use Sample Data" to explore the tool with pre-loaded datasets containing common data quality issues:
-- Missing values in customer IDs
-- Duplicate purchase records
+## Interpreting Results
+
+### Data Quality Score
+- **90–100:** Excellent data quality
+- **70–89:** Good quality with minor issues
+- **50–69:** Fair quality, attention recommended
+- **0–49:** Poor quality, immediate action required
+
+### Issue Severity Levels
+- 🔴 **Critical:** Affects >20% of the dataset
+- 🟡 **Warning:** Affects 5–20% of the dataset
+- 🟢 **Low:** Affects <5% of the dataset
+
+---
+
+## Example Issues Detected (Sample Data)
+- Missing customer identifiers
+- Duplicate transaction records
 - Inconsistent date formats
-- Mixed data types in amount columns
-- Invalid email formats
+- Mixed numeric and string values in amount columns
+- Invalid email address formats
 
-### Understanding the Results
+---
 
-#### Data Quality Score
-- **90-100**: Excellent data quality
-- **70-89**: Good data quality with minor issues
-- **50-69**: Fair data quality, attention needed
-- **0-49**: Poor data quality, immediate action required
+## Tools & Libraries
+- **Language:** Python  
+- **Data Processing:** pandas, NumPy  
+- **Visualization:** Plotly  
+- **Frontend / Deployment:** Streamlit  
+- **Testing:** unittest  
 
-#### Issue Severity Levels
-- **🔴 Critical**: Issues affecting >20% of data
-- **🟡 Warning**: Issues affecting 5-20% of data
-- **🟢 Low**: Issues affecting <5% of data
+---
 
+## Project Structure
 
-## Technical Details
+### DataQualityChecker (`scanner/checks.py`)
+- Executes automated data quality checks
+- Computes metrics and severity levels
+- Generates dataset-level summaries
 
-### Technology Stack
-- **Frontend**: Streamlit for interactive dashboard
-- **Backend**: Python with Pandas and NumPy for data processing
-- **Visualization**: Plotly for interactive charts
-- **Testing**: unittest for unit testing
-- **Data Processing**: Pandas for CSV handling and analysis
+### ReportGenerator (`scanner/reporting.py`)
+- Builds visual and textual reports
+- Handles export functionality
 
-### Key Components
+### Streamlit App (`app.py`)
+- User interface for file upload and exploration
+- Interactive dashboard for results visualization
 
-#### DataQualityChecker (`scanner/checks.py`)
-- Performs comprehensive data quality analysis
-- Detects missing values, duplicates, and schema issues
-- Calculates data quality metrics and scores
+---
 
-#### ReportGenerator (`scanner/reporting.py`)
-- Generates interactive visualizations
-- Creates text and summary reports
-- Provides export functionality
+## Performance
+- Supports CSV files up to 50MB
+- Processes datasets with 10,000+ rows in under 10 seconds
+- Optimized for memory efficiency on large files
 
-#### Streamlit App (`app.py`)
-- Web interface for file upload and visualization
-- Real-time data quality analysis
-- Interactive dashboard with multiple views
-
-### Performance
-- Handles CSV files up to 50MB efficiently
-- Processes 10,000+ rows in under 10 seconds
-- Memory-optimized for large datasets
+---
 
 ## Testing
-
-Run the test suite to ensure everything works correctly:
+Run the test suite locally to validate functionality:
 
 ```bash
-# Run all tests
 python -m pytest tests/
-
-# Run specific test file
 python -m pytest tests/test_checks.py
-
-# Run with verbose output
 python -m pytest tests/ -v
-```
-
-### Test Coverage
-- Missing value detection
-- Duplicate row identification
-- Schema validation
-- Data quality scoring
-- Clean data handling
-- Error handling
-
-## Use Cases
-
-### Data Engineering Teams
-- **Pre-processing validation**: Check data quality before ETL processes
-- **Pipeline monitoring**: Regular data quality audits
-- **Issue triage**: Prioritize data quality problems
-
-### Data Analysts
-- **Data exploration**: Understand data quality before analysis
-- **Report validation**: Ensure data integrity for business reports
-- **Stakeholder communication**: Generate quality reports for business users
-
-### Data Scientists
-- **Model preparation**: Clean data before machine learning
-- **Feature engineering**: Identify problematic features
-- **Model validation**: Ensure training data quality
-
-### Business Intelligence
-- **Dashboard validation**: Verify data quality for BI dashboards
-- **Compliance reporting**: Generate data quality documentation
-- **Audit preparation**: Prepare data quality evidence for audits
