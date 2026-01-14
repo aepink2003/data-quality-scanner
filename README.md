@@ -133,3 +133,37 @@ Run the test suite locally to validate functionality:
 python -m pytest tests/
 python -m pytest tests/test_checks.py
 python -m pytest tests/ -v
+
+```
+
+## Best Coverage
+	•	Missing value detection
+	•	Duplicate identification
+	•	Schema validation
+	•	Data quality scoring
+	•	Error and edge-case handling
+
+⸻
+
+## Use Cases
+
+Data Engineering
+	•	Validate data before ETL or pipeline ingestion
+	•	Perform routine data quality audits
+	•	Prioritize remediation efforts
+
+Data Analysis
+	•	Assess data readiness before analysis
+	•	Validate datasets used in reporting
+	•	Communicate data quality issues to stakeholders
+
+Data Science
+	•	Identify problematic features prior to modeling
+	•	Ensure training data integrity
+	•	Reduce downstream model risk
+
+Business Intelligence
+	•	Validate source data for dashboards
+	•	Support compliance and audit documentation
+	•	Standardize data quality reporting
+  
